@@ -20,8 +20,7 @@ function renderLicenseLink(license) {
     const licensePath = license === 'MIT' ? './../Licenses/MIT/MIT_files/03611f753e1ab5218ebdb7940d7759fc.html' 
     : license === 'Apache' ? './../Licenses/Apache/Apache_files/03611f753e1ab5218ebdb7940d7759fc.html'
     : './../Licenses/BSD/BSD_files/03611f753e1ab5218ebdb7940d7759fc.html'
-    return licensePath;
-    const licenselink = `[License Link](URL \'${licensePath}\')`;
+    return `[License Link](URL \'${licensePath}\')`;
   }
 }
 
@@ -68,7 +67,7 @@ export default function generateMarkdown(data) {
 
   ## Questions:
 
-  Github: [URL \'https://github.com/nflanner/${data.github}\'\n
+  Github: [URL \'https://github.com/${data.github}\']\n
   Email: ${data.email}
 
 `;
