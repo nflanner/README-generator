@@ -4,10 +4,10 @@ function renderLicenseBadge(license) {
   if (!license) {
     return ''
   } else {
-    const licensePath = license === 'MIT' ? './../Licenses/MIT/MITlogo.jfif' 
-    : license === 'Apache' ? './../Licenses/Apache/Apachelogo.htm'
-    : './../Licenses/BSD/logo.jfif'
-    return licensePath;
+    const licensePath = license === 'MIT' ? './Licenses/MIT/MITlogo.jpg' 
+    : license === 'Apache 2.0' ? './Licenses/Apache/Apachelogo.jpg'
+    : './Licenses/BSD/BSDlogo.jpg'
+    return `![License Logo](${licensePath})`;
   }
 }
 
@@ -17,10 +17,10 @@ function renderLicenseLink(license) {
   if (!license) {
     return ''
   } else {
-    const licensePath = license === 'MIT' ? './../Licenses/MIT/MIT_files/03611f753e1ab5218ebdb7940d7759fc.html' 
-    : license === 'Apache' ? './../Licenses/Apache/Apache_files/03611f753e1ab5218ebdb7940d7759fc.html'
-    : './../Licenses/BSD/BSD_files/03611f753e1ab5218ebdb7940d7759fc.html'
-    return `[License Link](URL \'${licensePath}\')`;
+    const licensePath = license === 'MIT' ? 'https://mit-license.org/' 
+    : license === 'Apache 2.0' ? 'https://www.apache.org/licenses/LICENSE-2.0.html'
+    : 'https://codedocs.org/what-is/bsd-licenses#4-clause_license_(original_%22BSD_License%22)'
+    return `[License](${licensePath})`;
   }
 }
 
@@ -40,6 +40,16 @@ export default function generateMarkdown(data) {
   return `# ${data.title}
 
   ${renderLicenseBadge(data.license)}
+
+  ## Table of Content\n
+  - [Project Description](#project-description)\n
+  - [Installation Instructions](#installation-instructions)\n
+  - [Usage Information](#usage-information)\n
+  - [Contribution Guidelines](#contribution-guidelines)\n
+  - [Test Instructions](#test-instructions)\n
+  - [License](#license)\n
+  - [Questions](#questions)\n
+  ---\n
 
   ## Project Description:
 
@@ -67,7 +77,7 @@ export default function generateMarkdown(data) {
 
   ## Questions:
 
-  Github: [URL \'https://github.com/${data.github}\']\n
+  Github: https://github.com/${data.github}\n
   Email: ${data.email}
 
 `;
