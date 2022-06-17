@@ -18,7 +18,7 @@ Below are links to the github repository and link to a short video on how to use
 
 [GitHub](https://github.com/nflanner/README-generator)
 
-![Tutorial](./Develop/Resources/README-generator.gif)
+[Tutorial Video](https://drive.google.com/file/d/1Zz5yfdd5z9uH3GUmsycfIFtvvKEV3078/view)
 
 ## User Story
 
